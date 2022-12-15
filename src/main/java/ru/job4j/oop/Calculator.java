@@ -21,7 +21,7 @@ public class Calculator {
     }
 
     public int sumAllOperation(int y) {
-        return (minus(5)) + (sum(5)) + (divide(5)) + (multiply(5));
+        return minus(y) + sum(y) + divide(y) + multiply(y);
     }
 
     public static void main(String[] args) {
