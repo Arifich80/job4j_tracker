@@ -24,3 +24,4 @@ public class Battery {
         System.out.println("First charge: " + first.load + ". second charge : " + second.load);
     }
 }
+
