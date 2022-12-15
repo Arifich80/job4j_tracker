@@ -7,7 +7,7 @@ public class Battery {
         this.load = load;
     }
 
-    public int getLoad(int load) {
+    public int getLoad() {
         return load;
     }
 
