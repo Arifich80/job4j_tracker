@@ -9,10 +9,6 @@ public class Item {
     public Item() {
     }
 
-    public LocalDateTime getCreated() {
-        return created;
-    }
-
     public Item(String name) {
         this.name = name;
     }
@@ -36,6 +32,10 @@ public class Item {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
     }
 }
 
