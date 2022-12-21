@@ -32,7 +32,7 @@ public class Library {
         System.out.println("Shown only Clean code:");
         for (int i = 0; i < books.length; i++) {
             Book bk = books[i];
-            if (bk.getName() == "Clean code") {
+            if ("Clean code".equals(bk.getName())) {
                 System.out.println(bk.getName() + " - " + bk.getPages() + " " + "страниц.");
             }
         }
