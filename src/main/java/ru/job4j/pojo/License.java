@@ -50,7 +50,10 @@ public class License {
             return false;
         }
         License license = (License) o;
-        return Objects.equals(owner, license.owner) && Objects.equals(model, license.model) && Objects.equals(code, license.code) && Objects.equals(created, license.created);
+        return Objects.equals(owner, license.owner)
+                && Objects.equals(model, license.model)
+                && Objects.equals(code, license.code)
+                && Objects.equals(created, license.created);
     }
 
     @Override
@@ -59,9 +62,9 @@ public class License {
     }
 
     public static void main(String[] args) {
-            License first = new License();
-            License second = new License();
-            boolean eq = first == second;
-            System.out.println(eq);
-        }
+        License first = new License();
+        License second = new License();
+        boolean eq = first == second;
+        System.out.println(eq);
     }
+}
