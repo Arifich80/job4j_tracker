@@ -12,19 +12,17 @@ public class Matches {
             System.out.println("Количество спичек на столе: " + count);
             System.out.print(player + " " + "выберите количество спичек от 1 до 3: \n");
             int select = Integer.valueOf(input.nextLine());
-            if (select < 1 || select > 3) {
+            if (select < 1 || select > Math.min(3, count)) {
                 System.out.println("Ошибка ввода");
-                continue;
-            } else if (count - select <= 0) {
-                if (!turn) {
-                    System.out.println("Выиграл первый игрок!");
-                } else {
-                    System.out.println("Выиграл второй игрок!");
-                }
+            } else {
+                count -= select;
+                turn = !turn;
             }
-            count -= select;
-            turn = !turn;
-            System.out.println();
+        }
+        if (!turn) {
+            System.out.println("Выиграл первый игрок!");
+        } else {
+            System.out.println("Выиграл второй игрок!");
         }
     }
 }
