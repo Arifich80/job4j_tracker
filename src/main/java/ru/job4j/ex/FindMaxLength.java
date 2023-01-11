@@ -1,5 +1,4 @@
 package ru.job4j.ex;
-
 public class FindMaxLength {
     public static void main(String[] args) {
         String[] shops = {"Ebay", null, "Amazon", null, "Ozon"};
