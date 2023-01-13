@@ -5,12 +5,13 @@ public class UserStore {
     public static User findUser(User[] users, String login) throws UserNotFoundException {
         User temp = null;
         for (User user : users) {
-            temp = null;
             if (login.equals(user.getUsername())) {
                 temp = user;
                 break;
             } else {
-                throw new UserNotFoundException("No such user found");
+                if (temp == null) {
+                    throw new UserNotFoundException("No such user found");
+                }
             }
         }
         return temp;
@@ -33,12 +34,12 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
+        } catch (UserInvalidException uie) {
+            uie.printStackTrace();
         } catch (UserNotFoundException unfe) {
             unfe.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (Throwable th) {
-            th.printStackTrace();
+
         }
     }
 }
+
