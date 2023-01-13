@@ -6,21 +6,24 @@ public class FindEl {
         for (int i = 0; i < value.length; i++) {
             if (value[i].equals(key)) {
                 rsl = i;
-                if (!value[i].equals(key)) {
-                    throw new ElementNotFoundException("No such element found");
-                }
+                break;
+            }
+            if (rsl == -1) {
+                throw new ElementNotFoundException("No such element found");
             }
         }
-            return rsl;
-        }
+        return rsl;
+    }
 
-    public static void main(String[] args) {
-        try {
-            String[] value = new String[]{"aa", "bb", "cc"};
-            System.out.println(indexOf(value, "an"));
-        } catch (ElementNotFoundException e) {
-            e.printStackTrace();
+        public static void main(String[]args) {
+            try {
+                String[] value = new String[]{"aa", "bb", "cc"};
+                System.out.println(indexOf(value, "bb"));
+            } catch (ElementNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
-}
+
+
 
