@@ -8,11 +8,10 @@ public class UserStore {
             if (login.equals(user.getUsername())) {
                 temp = user;
                 break;
-            } else {
-                if (temp == null) {
-                    throw new UserNotFoundException("No such user found");
-                }
             }
+        }
+        if (temp == null) {
+            throw new UserNotFoundException("No such user found");
         }
         return temp;
     }
