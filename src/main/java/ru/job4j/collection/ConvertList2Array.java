@@ -12,9 +12,9 @@ public class ConvertList2Array {
             array[row][cell] = num;
             cell++;
             if (cell >= cells) {
-                    row++;
-                    cell = 0;
-                }
+                row++;
+                cell = 0;
+            }
         }
         return array;
     }
