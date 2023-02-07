@@ -19,7 +19,7 @@ public class StartUITest {
                 new CreateAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findAll().get(0).getName()).isEqualTo("Item name");
     }
 
@@ -36,7 +36,7 @@ public class StartUITest {
                 new ReplaceAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo(replacedName);
     }
 
@@ -52,7 +52,7 @@ public class StartUITest {
                 new DeleteAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId())).isNull();
     }
 
@@ -69,7 +69,7 @@ public class StartUITest {
                 new ReplaceAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
@@ -95,7 +95,7 @@ public class StartUITest {
                 new ShowAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
@@ -121,7 +121,7 @@ public class StartUITest {
                 new FindByIdAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
@@ -147,7 +147,7 @@ public class StartUITest {
                 new FindByNameAction(out),
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
@@ -171,7 +171,7 @@ public class StartUITest {
         List<UserAction> actions = List.of(
                 new ExitAction()
         );
-        new StartUI(out).init(in, tracker, List.of());
+        new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + ln
