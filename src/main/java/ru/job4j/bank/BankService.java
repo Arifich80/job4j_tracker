@@ -17,11 +17,7 @@ public class BankService {
     }
 
     public boolean deleteUser(String passport) {
-        User user = findByPassport(passport);
-        if (user != null) {
-            List<Account> listAccount = users.remove(user);
-        }
-        return true;
+        return users.remove(new User(passport, "")) != null;
     }
 
     public void addAccount(String passport, Account account) {
@@ -48,8 +44,8 @@ public class BankService {
     public Account findByRequisite(String passport, String requisite) {
         Account account = null;
         User user = findByPassport(passport);
-        List<Account> list = users.get(user);
         if (user != null) {
+            List<Account> list = users.get(user);
             for (Account temp : list) {
                 if (temp.getRequisite().equals(requisite)) {
                     account = temp;
