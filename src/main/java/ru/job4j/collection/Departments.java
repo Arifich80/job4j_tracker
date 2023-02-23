@@ -12,9 +12,8 @@ public class Departments {
                 start += "".equals(start) ? el : "/" + el;
                 tmp.add(start);
             }
-            rsl.addAll(tmp);
         }
-        return rsl;
+        return new ArrayList<>(tmp);
     }
 
     public static void sortAsc(List<String> orgs) {
