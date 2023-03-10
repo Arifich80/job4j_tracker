@@ -8,8 +8,8 @@ import java.util.function.Predicate;
 public class PhoneDictionary {
     private ArrayList<Person> persons = new ArrayList<>();
 
-    public void add(Person person) {
-        this.persons.add(person);
+    public void add(Person var) {
+        this.persons.add(var);
     }
 
     public ArrayList<Person> find(String key) {
@@ -19,7 +19,7 @@ public class PhoneDictionary {
         Predicate<Person> address = x -> x.getAddress().contains(key);
         Predicate<Person> combine = name.or(surname).or(phone).or(address);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }

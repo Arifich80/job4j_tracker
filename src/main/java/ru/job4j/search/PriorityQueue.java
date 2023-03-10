@@ -6,15 +6,15 @@ import java.util.Objects;
 public class PriorityQueue {
     private LinkedList<Task> tasks = new LinkedList<>();
 
-    public void put(Task task) {
+    public void put(Task var) {
         int index = 0;
-        for (Task element : tasks) {
-            if (task.getPriority() < element.getPriority()) {
+        for (var element : tasks) {
+            if (var.getPriority() < element.getPriority()) {
                 break;
             }
             index++;
         }
-        this.tasks.add(index, task);
+        this.tasks.add(index, var);
     }
 
     public Task take() {
