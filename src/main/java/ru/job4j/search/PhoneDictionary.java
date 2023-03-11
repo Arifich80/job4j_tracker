@@ -8,8 +8,8 @@ import java.util.function.Predicate;
 public class PhoneDictionary {
     private ArrayList<Person> persons = new ArrayList<>();
 
-    public void add(Person var) {
-        this.persons.add(var);
+    public void add(Person person) {
+        this.persons.add(person);
     }
 
     public ArrayList<Person> find(String key) {
